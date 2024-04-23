@@ -3,9 +3,44 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.34408.137
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{C1F5365F-383F-4899-B96F-2921A2FCEF34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{71B44ED3-DA4C-48D1-B09D-4D1A7E8529E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{4B2FD734-0184-4F21-98D8-D3C5FC3108B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{9429A5E4-F9E9-452D-9ED2-47D8E7C2FE4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{EA31C8D4-BE27-4A46-9C1C-0469FE8FA140}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{3EC54BB0-FD40-4C86-8CD6-12AE47E492D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{28E105D3-7E24-4839-A3B5-A9D357EC8776}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{C3CA89AC-2505-44E0-B150-A4CA56208184}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA31C8D4-BE27-4A46-9C1C-0469FE8FA140} = {71B44ED3-DA4C-48D1-B09D-4D1A7E8529E1}
+		{3EC54BB0-FD40-4C86-8CD6-12AE47E492D8} = {71B44ED3-DA4C-48D1-B09D-4D1A7E8529E1}
+		{28E105D3-7E24-4839-A3B5-A9D357EC8776} = {71B44ED3-DA4C-48D1-B09D-4D1A7E8529E1}
+		{C3CA89AC-2505-44E0-B150-A4CA56208184} = {71B44ED3-DA4C-48D1-B09D-4D1A7E8529E1}
+		{7F20F1C5-CF4D-4DEC-ABBD-1A540CE48BB3} = {3EC54BB0-FD40-4C86-8CD6-12AE47E492D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3FE484CD-4F74-46A4-B509-99024D51B0DD}
