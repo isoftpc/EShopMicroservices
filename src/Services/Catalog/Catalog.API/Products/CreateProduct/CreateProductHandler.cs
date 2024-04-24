@@ -1,6 +1,4 @@
-﻿using BuildingBlocks.CQRS;
-using MediatR;
-
+﻿
 namespace Catalog.API.Products.CreateProduct
 {
     public record CreateProductCommand(
@@ -11,12 +9,23 @@ namespace Catalog.API.Products.CreateProduct
         decimal Price) : ICommand<CreateProductResult>;
     public record CreateProductResult(Guid id);
 
-    internal class CreateProductCommandHandler : ICommandHandler<CreateProductCommand,CreateProductResult>
+    internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand,CreateProductResult>
     {
-        public Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
-            //Business logic to create product
-            throw new NotImplementedException();
+            var product = new Product
+            {
+                Name = command.Name,
+                Category = command.Category,
+                Description = command.Description,
+                ImageFile = command.ImageFile,
+                Price = command.Price,
+            };
+            session.Store(product);
+            await session.SaveChangesAsync(cancellationToken);
+
+            //save to database
+            return new CreateProductResult(product.Id);
         }
     }
 }
